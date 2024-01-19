@@ -45,6 +45,13 @@ const pizzaData = [
     photoName: 'pizzas/prosciutto.jpg',
     soldOut: false,
   },
+  {
+    name: 'Pizza Prosciutto',
+    ingredients: 'Tomato, mozarella, ham, aragula, and burrata cheese',
+    price: 18,
+    photoName: 'pizzas/prosciutto.jpg',
+    soldOut: false,
+  },
 ];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,12 +74,10 @@ function Header() {
   );
 }
 
-
-
 function Menu() {
   const pizzas = pizzaData;
   const numPizzas = pizzas.length;
-  console.log(numPizzas) // Why the consol logs it twice
+  console.log(numPizzas); // Why the consol logs it twice
   return (
     <main className="menu">
       <h2>Our Menu</h2>
@@ -85,7 +90,7 @@ function Menu() {
           </p>
           <ul className="pizzas">
             {pizzaData.map((pizza) => (
-              <Pizza  props={pizza} key={pizza.name} />
+              <Pizza props={pizza} key={pizza.name} />
             ))}
           </ul>
         </>
@@ -108,8 +113,6 @@ function Pizza({ props }) {
     </li>
   );
 }
-
-
 
 function Footer() {
   const [timer, setTime] = useState('');
